@@ -19,11 +19,17 @@ export const topStories = async (index = 0): Promise<TopStoriesResponse> => {
 
   const chunk = chunkArray(postIdsData, 10)[index]
 
-  const posts = chunk.map((id: number) => {
+  const promises = chunk.map(async (id) => {
+    const postRes = await window.fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
+    const postData = await postRes.json()
+
     return {
-      id
+      id,
+      title: postData.title
     }
   })
+
+  const posts = await Promise.all(promises)
 
   return {
     posts,
