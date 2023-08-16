@@ -18,8 +18,8 @@ const Home = () => {
   async function fetchData (index: number) {
     const topStoriesData = await topStories(index)
 
-    setStoriesIndex(topStoriesData.index)
     setStories(topStoriesData.posts)
+    setStoriesIndex(topStoriesData.index)
   }
 
   useEffect(() => {

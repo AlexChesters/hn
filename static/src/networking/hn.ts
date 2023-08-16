@@ -33,6 +33,6 @@ export const topStories = async (index = 0): Promise<TopStoriesResponse> => {
 
   return {
     posts,
-    index: 0
+    index
   }
 }
