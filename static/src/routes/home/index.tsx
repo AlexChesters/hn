@@ -1,24 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 
-import Example from './components/Example'
-
-type Data = {
-  title?: string,
-  subtitle?: string
-}
+import { topStories } from '../../networking/hn'
 
 const Home = () => {
-  const [data, setData] = useState<Data>({})
-
   async function fetchData () {
-    const res = await window.fetch('https://www.reddit.com/r/all.json')
-    const data = await res.json()
-    const firstItem = data.data.children[0].data
-
-    setData({
-      title: firstItem.title,
-      subtitle: firstItem.subreddit_name_prefixed
-    })
+    console.log(await topStories())
   }
 
   useEffect(() => {
@@ -26,10 +12,7 @@ const Home = () => {
   }, [])
 
   return (
-    <Example
-      title={data.title}
-      subtitle={data.subtitle}
-    />
+    <h1>Hello, world!</h1>
   )
 }
 
