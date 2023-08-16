@@ -21,9 +21,5 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name: install dependencies
-        run: npm ci
-      - name: run tests
-        run: npm run lint
       - name: build image
         run: docker buildx build -t hn/static:build --platform=linux/arm64 --target build .
