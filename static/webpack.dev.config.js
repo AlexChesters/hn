@@ -11,8 +11,8 @@ module.exports = {
     './src/index.tsx'
   ],
   output: {
-    path: path.join(__dirname, '/build/my-app'),
-    publicPath: '/my-app',
+    path: path.join(__dirname, '/build/hn'),
+    publicPath: '/hn',
     filename: 'bundle.[contenthash].js'
   },
   resolve: {

@@ -10,7 +10,7 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, '/build'),
-    publicPath: '/my-app/',
+    publicPath: '/hn/',
     filename: 'bundle.[contenthash].js'
   },
   resolve: {
