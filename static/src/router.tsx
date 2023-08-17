@@ -7,7 +7,7 @@ import Home from './routes/home'
 
 export default function router () {
   return (
-    <Router basename={'/hn'}>
+    <Router basename={'/'}>
       <Routes>
         <Route path='/' element={<Home />} />
       </Routes>

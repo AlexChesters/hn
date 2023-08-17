@@ -12,7 +12,7 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, '/build/hn'),
-    publicPath: '/hn',
+    publicPath: '/',
     filename: 'bundle.[contenthash].js'
   },
   resolve: {
