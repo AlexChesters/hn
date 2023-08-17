@@ -1,4 +1,5 @@
 export type Post = {
   id: number,
-  title: string
+  title: string,
+  link: URL
 }

@@ -25,7 +25,8 @@ export const topStories = async (index = 0): Promise<TopStoriesResponse> => {
 
     return {
       id,
-      title: postData.title
+      title: postData.title,
+      link: new URL(postData.url)
     }
   })
 

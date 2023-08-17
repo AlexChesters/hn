@@ -32,8 +32,11 @@ const Home = () => {
   }, [storiesIndex])
 
   const seeMore = () => {
-    console.log('see more')
     setStoriesIndex(storiesIndex + 1)
+  }
+
+  const onPostClick = (post: Post) => {
+    window.open(post.link)
   }
 
   if (loading) {
@@ -60,7 +63,7 @@ const Home = () => {
             return (
               <div key={index}>
                 <ListItem>
-                  <ListItemButton>
+                  <ListItemButton onClick={() => onPostClick(story)}>
                     <ListItemText>{story.title}</ListItemText>
                   </ListItemButton>
                 </ListItem>
