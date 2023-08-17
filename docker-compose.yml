@@ -1,7 +1,7 @@
 version: "3.1"
 services:
   frontend:
-    image: alexchesters/hn:latest
+    image: public.ecr.aws/w3n0d9y7/hn:latest
     container_name: hn-frontend
     build:
       context: static
