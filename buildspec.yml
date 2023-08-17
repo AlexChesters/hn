@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      # build images
+      - docker compose build
+      # log in to the public registry
+      - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/w3n0d9y7
+      # tag and push images
+      - docker tag alexchesters/hn:latest public.ecr.aws/w3n0d9y7/alexchesters/hn:latest
+      - docker push public.ecr.aws/w3n0d9y7/alexchesters/hn:latest
+      # clean up untagged images
+      - sh ci/scripts/clean-ecr-images.sh hn
+artifacts:
+  files: "**/*"
+
