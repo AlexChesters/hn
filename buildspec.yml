@@ -3,6 +3,7 @@ version: 0.2
 phases:
   build:
     commands:
+      - docker --version
       # build images
       - docker compose build
       # log in to the public registry

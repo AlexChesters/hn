@@ -82,7 +82,7 @@ Resources:
           ArtifactStore:
             Type: S3
             Location: !Sub "alex-chesters-build-artifacts-${AWS::AccountId}-us-east-1"
-      Name: docker-images
+      Name: hn
       RestartExecutionOnUpdate: true
       RoleArn: !ImportValue ci-infrastructure-codepipeline-base-execution-role
       Stages:
