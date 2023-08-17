@@ -3,15 +3,8 @@ version: 0.2
 phases:
   build:
     commands:
-      - docker --version
-      - yum update -y
-      - yum install -y yum-utils
-      - yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-      - yum install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-      - docker --version
-      - docker compose version
       # build images
-      - docker compose build
+      - docker build -t alexchesters/hn:latest static
       # log in to the public registry
       - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/w3n0d9y7
       # tag and push images
