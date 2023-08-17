@@ -4,6 +4,10 @@ phases:
   build:
     commands:
       - docker --version
+      - yum update -y
+      - yum install -y docker-compose-plugin
+      - docker --version
+      - docker compose version
       # build images
       - docker compose build
       # log in to the public registry
