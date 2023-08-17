@@ -23,6 +23,7 @@ const Home = () => {
 
     setStories(topStoriesData.posts)
     setStoriesIndex(topStoriesData.index)
+
     setLoading(false)
   }
 
@@ -38,16 +39,13 @@ const Home = () => {
   if (loading) {
     return (
       <>
-        <Skeleton width='100%' height={300} />
-        <Skeleton width='100%' height={300} />
-        <Skeleton width='100%' height={300} />
-        <Skeleton width='100%' height={300} />
-        <Skeleton width='100%' height={300} />
-        <Skeleton width='100%' height={300} />
-        <Skeleton width='100%' height={300} />
-        <Skeleton width='100%' height={300} />
-        <Skeleton width='100%' height={300} />
-        <Skeleton width='100%' height={300} />
+        <Skeleton width='100%' height={100} />
+        <Skeleton width='100%' height={100} />
+        <Skeleton width='100%' height={100} />
+        <Skeleton width='100%' height={100} />
+        <Skeleton width='100%' height={100} />
+        <Skeleton width='100%' height={100} />
+        <Skeleton width='100%' height={100} />
       </>
     )
   }
