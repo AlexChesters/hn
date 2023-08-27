@@ -24,7 +24,7 @@ export const topStories = async (index = 0): Promise<TopStoriesResponse> => {
       const postRes = await window.fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
       const postData = await postRes.json()
 
-      if (postData.type !== 'story') return null
+      if (postData.type !== 'story' || !postData.url) return null
 
       return {
         id,
